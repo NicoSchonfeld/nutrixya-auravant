@@ -12,7 +12,10 @@ import {
   DrawerCloseButton,
   useDisclosure,
   Button,
+  Image,
 } from "@chakra-ui/react";
+
+import menu from "../assets/icons/menu.svg";
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,7 +27,7 @@ export default function Navbar() {
       py={2}
       alignItems="center"
       justifyContent="space-around"
-      shadow="md"
+      /* shadow="md" */
       pos="fixed"
       top="0"
       left="0"
@@ -33,9 +36,14 @@ export default function Navbar() {
       <Text> </Text>
       <LogoNutrixya />
 
-      <Text ref={btnRef} onClick={onOpen}>
-        Menu
-      </Text>
+      <Image
+        src={menu}
+        w={30}
+        h={30}
+        ref={btnRef}
+        onClick={onOpen}
+        cursor="pointer"
+      />
 
       <Drawer
         isOpen={isOpen}
