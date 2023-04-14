@@ -15,6 +15,8 @@ import {
   Image,
 } from "@chakra-ui/react";
 
+import { Link as ReactLink } from "react-router-dom";
+
 import menu from "../assets/icons/menu.svg";
 
 export default function Navbar() {
@@ -32,9 +34,12 @@ export default function Navbar() {
       top="0"
       left="0"
       direction="row"
+      zIndex={1}
     >
       <Text> </Text>
-      <LogoNutrixya />
+      <ReactLink to="/">
+        <LogoNutrixya />
+      </ReactLink>
 
       <Image
         src={menu}

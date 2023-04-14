@@ -12,6 +12,9 @@ import {
   Image,
   Tooltip,
 } from "@chakra-ui/react";
+
+import { Link as ReactLink } from "react-router-dom";
+
 import Navbar from "../components/Navbar";
 
 import campoIcon from "../assets/icons/campoIcon.svg";
@@ -70,18 +73,22 @@ const HomePage = () => {
         justifyContent="flex-start"
         padding={10}
       >
-        <Stack paddingTop="20" w="full" h="full" pos="relative">
+        <Stack paddingTop="20" w="full" h="full">
           <Heading fontSize="20">Mis Recomendaciones</Heading>
 
-          <Button
-            colorScheme="primary"
-            pos="absolute"
-            bottom="0"
+          <Stack
+            pos="fixed"
+            bottom="10"
             left="0"
+            alignItems="center"
+            justifyContent="center"
             w="full"
+            zIndex={2}
           >
-            Añadir Recomendaciones
-          </Button>
+            <Button as={ReactLink} to="/suelo" colorScheme="primary" w="80%">
+              Añadir Recomendaciones
+            </Button>
+          </Stack>
 
           <Accordion allowMultiple>
             {/* defaultIndex={[0]} */}
