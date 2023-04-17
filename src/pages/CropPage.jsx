@@ -7,6 +7,7 @@ import {
   Button,
   Accordion,
   AccordionItem,
+  Switch,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
@@ -19,6 +20,7 @@ import {
   FormHelperText,
   FormErrorMessage,
   Select,
+  Container,
 } from "@chakra-ui/react";
 
 import cerrarIcon from "../assets/icons/cerrar.svg";
@@ -43,9 +45,19 @@ const CropPage = () => {
         alignItems="center"
         justifyContent="flex-start"
         padding={10}
+        name="page2"
       >
-        <Stack paddingTop="20" w="full" h="full" pos="relative" spacing={10}>
-          <Heading fontSize="20">Añadir Cultivo</Heading>
+        <Container
+          maxW="container.sm"
+          paddingTop="20"
+          w="full"
+          h="full"
+          pos="relative"
+          display="flex"
+          flexDirection="column"
+          gap={10}
+        >
+          <Heading fontSize="30">Añadir Cultivo</Heading>
 
           <Stack
             direction="row"
@@ -88,27 +100,95 @@ const CropPage = () => {
             </Tooltip>
           </Stack>
 
-          <ButtonGroup
-            w="full"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            mb={20}
-            mt={10}
-          >
-            <Button
-              as={ReactLink}
-              to="/suelo"
-              variant="outline"
-              colorScheme="red"
+          <FormControl display="flex" flexDirection="column" gap={10}>
+            <Stack spacing={0}>
+              <FormLabel>Cultivo a fertilizar</FormLabel>
+              <Select placeholder="Seleccionar un Cultivo">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </Select>
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Fecha de siembra</FormLabel>
+              <Input type="date" placeholder="Seleccionar una fecha" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Rendimiento objetivo (qq/ha)</FormLabel>
+              <Input placeholder="Añadir un rendimiento objetivo" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Precio del producto U$S/tn</FormLabel>
+              <Input placeholder="Añadir un precio del producto" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Cultivo antecesor</FormLabel>
+              <Select placeholder="Seleccionar un Cultivo">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </Select>
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Tiempo transcurrido entre cosecha y siembra</FormLabel>
+              <Select placeholder="Seleccionar un tiempo entre cosecha y siembra">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </Select>
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Rendimiento del cultivo antecesor (Kg/ha)</FormLabel>
+              <Input placeholder="Añadir un Rendimiento del cultivo" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>
+                Costo de aplicación del fertilizante y del análisis de suelo
+                (u$s/ha)
+              </FormLabel>
+              <Input placeholder="Añadir un Rendimiento del cultivo" />
+            </Stack>
+
+            <Stack direction="row" alignItems="center" spacing={2}>
+              <FormLabel htmlFor="renderiza-siembra-directa" mb="0">
+                Realiza siembra directa
+              </FormLabel>
+              <Switch
+                id="renderiza-siembra-directa"
+                /* isChecked={true} */
+                colorScheme="primary"
+              />
+            </Stack>
+
+            <ButtonGroup
+              w="full"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              mb={20}
+              mt={10}
             >
-              Volver
-            </Button>
-            <Button as={ReactLink} to="/rendimiento" colorScheme="primary">
-              Guardar
-            </Button>
-          </ButtonGroup>
-        </Stack>
+              <Button
+                as={ReactLink}
+                to="/suelo"
+                variant="outline"
+                colorScheme="red"
+              >
+                Volver
+              </Button>
+              <Button as={ReactLink} to="/rendimiento" colorScheme="primary">
+                Guardar
+              </Button>
+            </ButtonGroup>
+          </FormControl>
+        </Container>
       </Stack>
     </>
   );

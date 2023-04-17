@@ -4,6 +4,8 @@ import HomePage from "../pages/HomePage";
 import ErrorPage from "../components/ErrorPage";
 import SoilPage from "../pages/SoilPage";
 import CropPage from "../pages/CropPage";
+import ResultsPage from "../pages/ResultsPage";
+import EditsResults from "../pages/EditsResults";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +21,16 @@ export const router = createBrowserRouter([
   {
     path: "/cultivo",
     element: <CropPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/rendimiento",
+    element: <ResultsPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "//rendimineto/editables",
+    element: <EditsResults />,
     errorElement: <ErrorPage />,
   }, // Añadir más rutas...
 ]);

@@ -19,11 +19,14 @@ import {
   FormHelperText,
   FormErrorMessage,
   Select,
+  Container,
 } from "@chakra-ui/react";
 
 import cerrarIcon from "../assets/icons/cerrar.svg";
 
 import { Link as ReactLink } from "react-router-dom";
+
+import { Link } from "react-scroll";
 
 import Navbar from "../components/Navbar";
 
@@ -78,8 +81,17 @@ const SoilPage = () => {
         justifyContent="flex-start"
         padding={10}
       >
-        <Stack paddingTop="20" w="full" h="full" pos="relative" spacing={10}>
-          <Heading fontSize="20">Añadir Suelo</Heading>
+        <Container
+          maxW="container.sm"
+          paddingTop="20"
+          w="full"
+          h="full"
+          pos="relative"
+          display="flex"
+          flexDirection="column"
+          gap={10}
+        >
+          <Heading fontSize="30">Añadir Suelo</Heading>
 
           <Stack
             direction="row"
@@ -245,12 +257,13 @@ const SoilPage = () => {
               <Button as={ReactLink} to="/" variant="outline" colorScheme="red">
                 Volver
               </Button>
+
               <Button as={ReactLink} to="/cultivo" colorScheme="primary">
                 Siguiente
               </Button>
             </ButtonGroup>
           </FormControl>
-        </Stack>
+        </Container>
       </Stack>
     </>
   );

@@ -11,6 +11,7 @@ import {
   AccordionIcon,
   Image,
   Tooltip,
+  Container,
 } from "@chakra-ui/react";
 
 import { Link as ReactLink } from "react-router-dom";
@@ -71,10 +72,19 @@ const HomePage = () => {
         h={dataExample > 15 ? "auto" : "full"}
         alignItems="center"
         justifyContent="flex-start"
-        padding={10}
+        py={10}
+        px={5}
       >
-        <Stack paddingTop="20" w="full" h="full">
-          <Heading fontSize="20">Mis Recomendaciones</Heading>
+        <Container
+          maxW="container.sm"
+          paddingTop="20"
+          w="full"
+          h="full "
+          display="flex"
+          flexDirection="column"
+          gap={10}
+        >
+          <Heading fontSize="30">Mis Recomendaciones</Heading>
 
           <Stack
             pos="fixed"
@@ -231,7 +241,7 @@ const HomePage = () => {
               </>
             ))}
           </Accordion>
-        </Stack>
+        </Container>
       </Stack>
     </>
   );
