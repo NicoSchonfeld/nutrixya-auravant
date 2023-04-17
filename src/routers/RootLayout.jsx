@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "//rendimineto/editables",
+    path: "/rendimieto/editables",
     element: <EditsResults />,
     errorElement: <ErrorPage />,
   }, // Añadir más rutas...

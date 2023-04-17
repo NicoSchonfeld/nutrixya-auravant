@@ -108,7 +108,7 @@ const ResultsPage = () => {
             <Box py={20}>
               <Button
                 as={ReactLink}
-                to="/rendimineto/editables"
+                to="/rendimieto/editables"
                 colorScheme="primary"
                 w="full"
               >
