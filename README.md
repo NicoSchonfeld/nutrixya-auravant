@@ -11,3 +11,10 @@
 - react-icons (iconos para react)
 - react-router-dom (Rutas)
 - react-scroll (Manipular el scroll)
+
+ <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap"
+      rel="stylesheet"
+    /> -->

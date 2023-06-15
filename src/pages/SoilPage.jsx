@@ -31,13 +31,8 @@ import { Link } from "react-scroll";
 import Navbar from "../components/Navbar";
 
 const SoilPage = () => {
-  /* Validacion de input */
-  const [input, setInput] = useState("");
-  const handleInputChange = (e) => setInput(e.target.value);
-  const isError = input === "";
-
   /* input analisisDeSuelo */
-  const [anialisisDeSuelo, setAnalisisDeSuelo] = useState([]);
+  /* const [anialisisDeSuelo, setAnalisisDeSuelo] = useState([]);
 
   const handleChangeAnalisis = (e) => {
     const { value, selectedIndex, childNodes } = e.target;
@@ -68,7 +63,7 @@ const SoilPage = () => {
     const isDisabled = anialisisDeSuelo?.find((af) => af);
 
     setDisabledState(isDisabled?.disabled);
-  }, [anialisisDeSuelo]);
+  }, [anialisisDeSuelo]); */
 
   return (
     <>
@@ -158,7 +153,7 @@ const SoilPage = () => {
 
             <Text fontWeight="bold">Estrato 1</Text>
 
-            <Stack spacing={0}>
+            {/* <Stack spacing={0}>
               <FormLabel>Análisis de suelo</FormLabel>
               <Stack>
                 <Select
@@ -224,10 +219,15 @@ const SoilPage = () => {
                   ))}
                 </Stack>
               </Stack>
+            </Stack> */}
+
+            <Stack spacing={0}>
+              <FormLabel>Profundidad (cm)</FormLabel>
+              <Input type="text" />
             </Stack>
 
             <Stack spacing={0}>
-              <FormLabel>Densidad de suelo</FormLabel>
+              <FormLabel>P</FormLabel>
               <Input type="text" />
             </Stack>
 
@@ -246,6 +246,50 @@ const SoilPage = () => {
               <Input type="text" />
             </Stack>
 
+            <Stack spacing={0}>
+              <FormLabel>Densidad de suelo</FormLabel>
+              <Input type="text" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>M.O</FormLabel>
+              <Input type="text" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>CE</FormLabel>
+              <Input type="text" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Cai</FormLabel>
+              <Input type="text" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Ki</FormLabel>
+              <Input type="text" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>M-NO3</FormLabel>
+              <Input type="text" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Fim</FormLabel>
+              <Input type="text" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>pH</FormLabel>
+              <Input type="text" />
+            </Stack>
+
+            <Stack spacing={0}>
+              <FormLabel>Mgi</FormLabel>
+              <Input type="text" />
+            </Stack>
             <ButtonGroup
               w="full"
               display="flex"

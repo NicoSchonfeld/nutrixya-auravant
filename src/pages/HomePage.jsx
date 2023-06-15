@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   Stack,
   Heading,
@@ -12,6 +14,7 @@ import {
   Image,
   Tooltip,
   Container,
+  useStatStyles,
 } from "@chakra-ui/react";
 
 import { Link as ReactLink } from "react-router-dom";
@@ -23,6 +26,8 @@ import cultivoIcon from "../assets/icons/cultivoIcon.svg";
 import fechaIcon from "../assets/icons/fechaIcon.svg";
 import eliminarIcon from "../assets/icons/eliminarIcon.svg";
 import compartirIcon from "../assets/icons/compartirIcon.svg";
+
+import axios from "axios";
 
 const dataExample = [
   {
@@ -63,6 +68,29 @@ const dataExample = [
 ];
 
 const HomePage = () => {
+  const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzcmMiOiJ3IiwidWlkIjoiVUlELWM0MjhmMzQ4MTY3MDQ3MGM0ZmVhN2IxZDdlZTQ0ZGQ5IiwibG9jYWxlIjoiZXNfQVIiLCJkZXYiOjIwNCwiZXhwIjoxNjg4ODQ3NzY0LCJ2IjoxNjI1LCJpYXQiOjE2ODYyNTU3NjR9.7e2urCvutlyQ061F2skj19F7xu76Vm85bYNXSZQXgCk`;
+
+  const URL_API = `https://api.auravant.com/api`;
+
+  const authAxios = axios.create({
+    baseURL: URL_API,
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  React.useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    await authAxios.get(`/getfields`).then((res) => {
+      console.log(
+        Object.values(Object.values(res?.data?.user?.farms)[0]?.fields)[0]
+      );
+    });
+  };
+
   return (
     <>
       <Navbar />
@@ -101,8 +129,6 @@ const HomePage = () => {
           </Stack>
 
           <Accordion allowMultiple>
-            {/* defaultIndex={[0]} */}
-
             {dataExample?.map((dato) => (
               <>
                 <AccordionItem
@@ -111,7 +137,6 @@ const HomePage = () => {
                   borderRadius="md"
                   mb="3"
                   mt="3"
-                  /* shadow="md" */
                 >
                   <AccordionButton>
                     <Stack

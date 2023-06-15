@@ -26,7 +26,7 @@ import {
 
 import { Link as ReactLink } from "react-router-dom";
 
-const EditsResults = () => {
+const AbonoOrganico = () => {
   return (
     <>
       <Navbar />
@@ -45,10 +45,10 @@ const EditsResults = () => {
           h="full"
           pos="relative"
           display="flex"
-          gap={40}
+          gap={10}
           flexDirection="column"
         >
-          <Heading fontSize="30">Editables</Heading>
+          <Heading fontSize="30">Abono Orgánico</Heading>
 
           <Stack
             w="full"
@@ -57,18 +57,9 @@ const EditsResults = () => {
             justifyContent="flex-start"
             spacing={10}
           >
-            <Button
-              as={ReactLink}
-              to={"/fertilizantes"}
-              colorScheme="primary"
-              w="full"
-            >
-              Fertilizantes
-            </Button>
-
             <Stack spacing={0} w="full">
-              <FormLabel>Disponibilidad de agua</FormLabel>
-              <Select placeholder="Seleccionar una disponibilidad de agua">
+              <FormLabel>Abono Orgánico</FormLabel>
+              <Select placeholder="Seleccionar un Arrancador">
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
@@ -76,8 +67,33 @@ const EditsResults = () => {
             </Stack>
 
             <Stack spacing={0} w="full">
-              <FormLabel>Fecha de siembra</FormLabel>
-              <Input type="date" />
+              <FormLabel>Cantidad (Kg/ha)</FormLabel>
+              <Input type="number" />
+            </Stack>
+
+            <Stack spacing={0} w="full">
+              <FormLabel>Precio (USD/tn)</FormLabel>
+              <Input type="number" />
+            </Stack>
+
+            <Stack
+              w="full"
+              direction="row"
+              alignItems="center"
+              justifyContent="flex-end"
+            >
+              <Button
+                as={ReactLink}
+                to="/fertilizantes"
+                colorScheme="red"
+                variant="outline"
+              >
+                Cancelar
+              </Button>
+
+              <Button as={ReactLink} to="/rendimiento" colorScheme="primary">
+                Guardar
+              </Button>
             </Stack>
           </Stack>
         </Container>
@@ -86,4 +102,4 @@ const EditsResults = () => {
   );
 };
 
-export default EditsResults;
+export default AbonoOrganico;
